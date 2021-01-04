@@ -1,12 +1,23 @@
+import "bootstrap/dist/css/bootstrap.css"
+import 'primeflex/primeflex.css';
+import 'primereact/resources/themes/saga-blue/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import  './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Footer} from './components/footer/footer.component';
+import {Header} from './components/header/header.component';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Header/>
+    <App/>
+    <Footer/>
   </React.StrictMode>,
   document.getElementById('root')
 );
