@@ -10,14 +10,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Footer} from './components/footer/footer.component';
 import {Header} from './components/header/header.component';
+import { BrowserRouter } from 'react-router-dom';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
+     <BrowserRouter>
     <Header/>
     <App/>
     <Footer/>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
