@@ -11,16 +11,21 @@ import reportWebVitals from './reportWebVitals';
 import {Footer} from './components/footer/footer.component';
 import {Header} from './components/header/header.component';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-     <BrowserRouter>
-    <Header/>
-    <App/>
-    <Footer/>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header/>
+        <App/>
+        <Footer/>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
