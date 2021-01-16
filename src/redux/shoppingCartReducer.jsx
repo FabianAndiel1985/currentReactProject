@@ -1,22 +1,25 @@
 
 const INITIAL_STATE = {
-  productInCart: null
+  productInCart: "shalalal"
 };
 
 
-const userReducer = (state = INITIAL_STATE, action) => {
+const shoppingCartReducer = (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
-    case "some Case":
-      return {
-        ...state,
-        currentUser: action.payload
-      };
+    case "lalalal":
+        console.log("works");
+        return state;
+    //   return {
+    //     ...state,
+    //     currentUser: action.payload
+    //   };
     default:
+        console.log("worksce");
       return state;
   }
 };
 
 
-export default userReducer;
+export default shoppingCartReducer;
 
