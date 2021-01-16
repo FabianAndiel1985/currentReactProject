@@ -1,22 +1,20 @@
 
-const INITIAL_STATE = {
-  productInCart: "shalalal"
-};
+const INITIAL_STATE = [];
 
 
 const shoppingCartReducer = (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
-    case "lalalal":
-        console.log("works");
-        return state;
+    case "addProductToCart":
+        console.log(action.product);
     //   return {
     //     ...state,
     //     currentUser: action.payload
     //   };
-    default:
-        console.log("worksce");
+      state = [...state, action.product];
       return state;
+    default:
+        return state;
   }
 };
 

@@ -1,9 +1,10 @@
 import { createStore, applyMiddleware } from 'redux';
     
 import logger from 'redux-logger';
-	
 
 import shoppingCartReducer from './shoppingCartReducer';
+
+// What does this mean:  
 	
 const middlewares = [logger];
 	

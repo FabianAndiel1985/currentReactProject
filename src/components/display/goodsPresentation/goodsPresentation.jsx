@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {giveAction} from './giveAction';
+import {giveAction} from '../../../redux/actions';
 
 class GoodsPresentation extends React.Component {
 	
@@ -13,8 +13,14 @@ class GoodsPresentation extends React.Component {
     componentDidMount() {
     }
 
-   
+    
   render() {
+
+    //WHY DOesn`t it work when I put it there?  
+
+  // const giveAction = ()=>{ 
+  //   return  {type:"lalalal"}
+  // }
 
    const Data = this.props.productsArray != undefined ? this.props.productsArray.map(
       (item,index)=>{
@@ -25,7 +31,7 @@ class GoodsPresentation extends React.Component {
           <td>{item.price}</td>
           <td>{item.description}</td>
           <td>{item.image}</td>
-          <td><button onClick={this.props.giveAction}>add to cart</button></td>
+          <td><button onClick={ (e)=> {this.props.giveAction(e,item)}}>add to cart</button></td>
         </tr>
        )           
        }  
@@ -67,7 +73,6 @@ class GoodsPresentation extends React.Component {
 
 let mapDispatchToProps= {
   giveAction  
-
 }
 
 
