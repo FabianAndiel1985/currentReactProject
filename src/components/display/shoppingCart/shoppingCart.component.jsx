@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {ProductCard} from './productCart/ProductCard.component';
+import {removeProductFromCart } from '../../../redux/actions';
+
+
 
 class ShoppingCart extends React.Component {
 	
@@ -10,14 +15,37 @@ class ShoppingCart extends React.Component {
     }
     
   render() {
+
+
+    const Data = this.props.productsInCart != undefined ? this.props.productsInCart.map(
+      (item,index)=>{
+        return (
+          <ProductCard product={item} key={item.id} removeFunction={removeProductFromCart}/>
+       )           
+       }  
+    )
+    :null
+;
+
     
     return (
-      <p> Shopping cart</p>
+      <div>{Data}</div>
       );
       
   }
 }
 
+const mapStateToProps = (state) => { 
+  return { productsInCart: state }
+}
 
 
-export default ShoppingCart;
+// let mapDispatchToProps= {
+//   giveAction  
+// }
+
+
+const ShoppingCart2 = connect(
+  mapStateToProps, null)(ShoppingCart);
+ 
+export default ShoppingCart2;

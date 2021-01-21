@@ -4,3 +4,11 @@ export const giveAction = (event,item)=>{
                 product:item
             }
 }
+
+export const removeProductFromCart = (event)=>{
+    console.log("§");
+    return  {
+                type:"removeProductFromCart",
+                
+            }
+}

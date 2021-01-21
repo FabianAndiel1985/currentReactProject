@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {giveAction} from '../../../redux/actions';
 
@@ -61,26 +60,10 @@ class GoodsPresentation extends React.Component {
   }
 }
 
-// GoodsPresentation.propTypes = {
-//   productsArray: PropTypes.shape({
-//     id: PropTypes.number,
-//     name: PropTypes.string,
-//     price: PropTypes.number,
-//     description: PropTypes.string,
-//     img:PropTypes.string
-//   })
-// };
 
 let mapDispatchToProps= {
   giveAction  
 }
-
-
-// let mapDispatchToProps = { 
-// 	increment:increment,
-// 	decrement:decrement
-// }
-
 
 
 const GoodsPresentation2 = connect(
