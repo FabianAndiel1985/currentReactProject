@@ -3,16 +3,14 @@ import { connect } from "react-redux";
 import { ProductCard } from "./productCart/ProductCard.component";
 import { removeProductFromCart } from "../../../redux/actions";
 
-class ShoppingCart extends React.Component {
+class ShoppingCart extends Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {}
-
   render() {
     const Data =
-      this.props.productsInCart != undefined
+      this.props.productsInCart !== undefined
         ? this.props.productsInCart.map((item, index) => {
             return (
               <ProductCard
