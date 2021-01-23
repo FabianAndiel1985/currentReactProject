@@ -1,51 +1,40 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import {ProductCard} from './productCart/ProductCard.component';
-import {removeProductFromCart } from '../../../redux/actions';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { ProductCard } from "./productCart/ProductCard.component";
+import { removeProductFromCart } from "../../../redux/actions";
 
+class ShoppingCart extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-
-class ShoppingCart extends React.Component {
-	
-  constructor(props){
-		super(props);
-    }
-
-    componentDidMount() {
-    }
-    
   render() {
-
-
-    const Data = this.props.productsInCart != undefined ? this.props.productsInCart.map(
-      (item,index)=>{
-        return (
-          <ProductCard product={item} key={item.id} removeFunction={removeProductFromCart}/>
-       )           
-       }  
-    )
-    :null
-;
-
-    
-    return (
-      <div>{Data}</div>
-      );
-      
+    const Data =
+      this.props.productsInCart !== undefined
+        ? this.props.productsInCart.map((item, index) => {
+            return (
+              <ProductCard
+                product={item}
+                key={item.id}
+                removeFunction={this.props.removeProductFromCart}
+              />
+            );
+          })
+        : null;
+    return <div>{Data}</div>;
   }
 }
 
-const mapStateToProps = (state) => { 
-  return { productsInCart: state }
-}
-
+const mapStateToProps = (state) => {
+  return { productsInCart: state };
+};
 
 // let mapDispatchToProps= {
-//   giveAction  
+//   giveAction
 // }
 
+const ShoppingCart2 = connect(mapStateToProps, { removeProductFromCart })(
+  ShoppingCart
+);
 
-const ShoppingCart2 = connect(
-  mapStateToProps, null)(ShoppingCart);
- 
 export default ShoppingCart2;
